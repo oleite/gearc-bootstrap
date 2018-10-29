@@ -1,0 +1,47 @@
+body,html {
+   padding: 0;
+   margin: 0;
+}
+body {
+   background-color: #0e0e0e;
+}
+
+
+.header {
+   position: absolute;
+   z-index: 11;
+}
+
+.gearc-logo {
+   background-color: #CC2C00;
+   height: 150px;
+   padding: 10px;
+
+}
+
+.video-overlay {
+   position: absolute;
+   z-index: 1;
+   background-color: rgba(20,20,20,0.7);
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+}
+
+.carousel {
+   position: relative;
+   height: 100vh;
+   overflow: hidden;
+}
+
+.carousel-video {
+   position: absolute;
+   min-height: 100%;
+   min-width: 100%;
+
+   transition: filter 1s ease;
+}
+.carousel-video:hover {
+   filter: blur(10px);
+}
