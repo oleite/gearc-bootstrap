@@ -10,6 +10,7 @@ body {
 .header {
    position: absolute;
    z-index: 11;
+   width: 100%;
 }
 
 .gearc-logo {
@@ -44,4 +45,20 @@ body {
 }
 .carousel-video:hover {
    filter: blur(10px);
+}
+
+
+
+.navbar {
+   padding: 0;
+}
+.navbar-brand {
+   padding: 0;
+}
+.navbar-collapse {
+   flex: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+   color: white;
 }
