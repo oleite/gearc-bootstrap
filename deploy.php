@@ -6,7 +6,7 @@
  * Based on: https://gist.github.com/oodavid/1809044
  */
 
-$key = '[SET_YOUR_RANDOM_KEY]';
+$key = 'bananasarereallycoolanimals';
 
 if ($_GET['key'] != $key){
     header('Location: ./');
