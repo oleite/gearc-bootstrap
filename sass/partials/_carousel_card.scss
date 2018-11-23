@@ -8,11 +8,7 @@
    justify-content: center;
    align-items: center;
 
-   &:hover {
-      .carousel-arrow-down {
-         opacity: 0.5;
-      }
-   }
+
    .carousel-arrow-down {
       z-index: 2;
       position: absolute;
@@ -23,12 +19,13 @@
       left: 0;
       right: 0;
       pointer-events: none;
-      transition: all 1s ease;
+      transition: opacity 1s ease, transform 500ms ease;
    }
 
    .carousel-content {
       z-index: 2;
       position: relative;
+      pointer-events: none;
 
       .title {
          font-size: 5em;
@@ -49,13 +46,24 @@
          position: absolute;
          min-height: 100%;
          min-width: 100%;
+
          transition: filter 1s ease;
+
          animation-name: fade-in;
          animation-duration: 120ms;
          filter: blur(10px);
          &:hover {
             filter: blur(0px);
          }
+      }
+      .carousel-image {
+         position: absolute;
+         min-height: 100%;
+         min-width: 100%;
+
+         pointer-events: none;
+         opacity: 0;
+         transition: opacity 3s ease;
       }
       .video-overlay {
          position: absolute;
@@ -68,21 +76,33 @@
          pointer-events: none;
       }
    }
+
+
+
+   &:hover {
+      .carousel-arrow-down {
+         opacity: 0.5;
+      }
+   }
+   &.active {
+      .carousel-arrow-down {
+         transform: rotate(-90deg);
+      }
+      .carousel-image {
+         opacity: 1;
+      }
+   }
 }
 
 .card {
    display: none;
-   margin-top: 10vh;
+   margin-top: 5vh;
    padding-top: 50px;
    min-height: 100vh;
    overflow: visible;
 
    position: relative;
    background-color: #0e0e0edd;
-
-   .row {
-      padding: 20px 70px;
-   }
 
    &:before {
       content: "";
@@ -100,22 +120,28 @@
       display: block;
    }
 
-   .left {
+
+   .row {
+      padding: 20px 70px;
+
       opacity: 0;
       transform: translateY(100px);
       animation-name: slide-sm-up, fade-in;
       animation-duration: 1s;
       animation-delay: 250ms;
       animation-fill-mode: forwards;
-   }
 
-   .right {
-      background-color: #111;
-      opacity: 0;
-      transform: translateX(100%);
-      animation-name: slide-lg-left, fade-in;
-      animation-duration: 1s;
-      animation-delay: 250ms;
-      animation-fill-mode: forwards;
+      .card-feat {
+         padding: 0 100px;
+         margin-bottom: 50px;
+      }
+
+      .left {
+
+      }
+
+      .right {
+         background-color: #111;
+      }
    }
 }

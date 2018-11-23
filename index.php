@@ -14,9 +14,10 @@
       <video autoplay muted loop id="video-rain" class="carousel-video" data-file="feat-rain">
          <source src="media/video/rain.mp4" type="video/mp4">
       </video>
+      <img class="carousel-image" src="./media/bitmap/rain1.png" alt="">
    </div>
 </div>
-<div class="card container"></div>
+<div class="card container js-close-featured"></div>
 
 
 <?php include 'footer.php'; ?>
