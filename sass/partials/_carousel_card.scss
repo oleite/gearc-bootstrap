@@ -1,0 +1,121 @@
+
+.carousel {
+   height: 100vh;
+   overflow: hidden;
+   cursor: pointer;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   &:hover {
+      .carousel-arrow-down {
+         opacity: 0.5;
+      }
+   }
+   .carousel-arrow-down {
+      z-index: 2;
+      position: absolute;
+      transform: rotate(90deg);
+      width: 75px;
+      margin: 0 auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      transition: all 1s ease;
+   }
+
+   .carousel-content {
+      z-index: 2;
+      position: relative;
+
+      .title {
+         font-size: 5em;
+      }
+      .description {
+         opacity: 0.7;
+         font-size: 2em;
+      }
+   }
+
+
+   .carousel-fixed {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+
+      .carousel-video {
+         position: absolute;
+         min-height: 100%;
+         min-width: 100%;
+         transition: filter 1s ease;
+         animation-name: fade-in;
+         animation-duration: 120ms;
+         filter: blur(10px);
+         &:hover {
+            filter: blur(0px);
+         }
+      }
+      .video-overlay {
+         position: absolute;
+         z-index: 1;
+         background-color: rgba(20, 20, 20, 0.7);
+         top: 0;
+         bottom: 0;
+         right: 0;
+         left: 0;
+         pointer-events: none;
+      }
+   }
+}
+
+.card {
+   display: none;
+   margin-top: 10vh;
+   padding-top: 50px;
+   min-height: 100vh;
+   overflow: visible;
+
+   position: relative;
+   background-color: #0e0e0edd;
+
+   .row {
+      padding: 20px 70px;
+   }
+
+   &:before {
+      content: "";
+      max-width: 500px;
+      border-top: solid 8px $primary;
+      border-radius: 2px;
+      position: absolute;
+      top: -4px;
+      left: 0;
+      right: 0;
+      margin: auto;
+   }
+
+   &.active {
+      display: block;
+   }
+
+   .left {
+      opacity: 0;
+      transform: translateY(100px);
+      animation-name: slide-sm-up, fade-in;
+      animation-duration: 1s;
+      animation-delay: 250ms;
+      animation-fill-mode: forwards;
+   }
+
+   .right {
+      background-color: #111;
+      opacity: 0;
+      transform: translateX(100%);
+      animation-name: slide-lg-left, fade-in;
+      animation-duration: 1s;
+      animation-delay: 250ms;
+      animation-fill-mode: forwards;
+   }
+}

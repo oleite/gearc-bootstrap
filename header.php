@@ -8,9 +8,6 @@
       <link rel="stylesheet" href="css/gearc.css"/>
 
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-
-      <script src="lib/jquery-3.3.1.min.js"></script>
-      <script src="lib/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
    </head>
    <body>
       <nav class="header navbar row navbar-expand-lg navbar-light">
@@ -45,5 +42,3 @@
       </nav>
 
       <div class="wrapper">
-
-      

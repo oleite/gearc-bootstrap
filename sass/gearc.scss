@@ -1,3 +1,7 @@
+$primary: #CC2C00;
+
+@import 'partials/_carousel_card.scss';
+
 body, html {
    padding: 0;
    margin: 0;
@@ -43,6 +47,7 @@ body {
 
 .wrapper {
    position: relative;
+   overflow-x: hidden;
 }
 
 .header {
@@ -53,53 +58,17 @@ body {
 }
 
 .gearc-logo {
-   background-color: #CC2C00;
+   background-color: $primary;
    height: 150px;
    padding: 10px;
    pointer-events: none;
 }
 
-.video-overlay {
-   position: absolute;
-   z-index: 1;
-   background-color: rgba(20, 20, 20, 0.7);
-   top: 0;
-   bottom: 0;
-   right: 0;
-   left: 0;
-   pointer-events: none;
-}
 
-.carousel {
-   position: relative;
-   height: 100vh;
-   overflow: hidden;
-}
 
-.carousel-video {
-   position: absolute;
-   min-height: 100%;
-   min-width: 100%;
-   transition: filter 1s ease;
-   animation-name: fade-in;
-   animation-duration: 120ms;
-   filter: blur(10px);
-   &:hover {
-      filter: blur(0px);
-   }
-}
 
-.carousel-arrow-down {
-   z-index: 12;
-   position: absolute;
-   transform: rotate(90deg);
-   width: 75px;
-   margin: 0 auto;
-   bottom: 0;
-   left: 0;
 
-   text-align: center;
-}
+
 
 .navbar {
    padding-top: 0;
@@ -123,6 +92,7 @@ body {
 
 .page-content {
    position: relative;
+   min-height: 100vh;
    z-index: 2;
    padding-top: 300px;
 }
@@ -131,7 +101,7 @@ body {
    font-family: 'Open Sans', sans-serif;
    font-weight: 800;
    font-size: 4em;
-   color: rgba(204, 44, 0, 0.6);
+   color: $primary;
    text-shadow: 0 5px 5px #0009;
    animation-name: fade-in;
    animation-duration: 500ms;
@@ -160,31 +130,4 @@ body {
    width: 100%;
    height: 100%;
    background: linear-gradient(to bottom, rgba(20, 20, 20, 0.7) 0%, #0e0e0e 100%);
-}
-
-.featured {
-   display: none;
-   margin-top: 50px;
-   &.active {
-      display: block;
-   }
-}
-
-.feat-left {
-   opacity: 0;
-   transform: translateY(100px);
-   animation-name: slide-sm-up, fade-in;
-   animation-duration: 1s;
-   animation-delay: 250ms;
-   animation-fill-mode: forwards;
-}
-
-.feat-right {
-   background-color: #111;
-   opacity: 0;
-   transform: translateY(100px);
-   animation-name: slide-lg-left, fade-in;
-   animation-duration: 1s;
-   animation-delay: 250ms;
-   animation-fill-mode: forwards;
 }

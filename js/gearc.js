@@ -7,18 +7,18 @@ $('.carousel-video').on('click', function(){
 
 function load_featured( featuredFile ) {
 
-   var result = "posts/" + featuredFile + ".html";
+   var result = "posts/" + featuredFile + ".html" + "?nocache=" + Math.random();
    console.log("Loaded " + result);
-   $('.featured').load( result );
+   $('.card').load( result );
 
    //$('.featured').hide().load(result).toggle('500ms');
 
-   $('.featured').addClass("active");
+   $('.card').addClass("active");
 
    var viewportHeight = $(window).height();
 
    $('html, body').animate({
-      scrollTop: viewportHeight * .9,
+      scrollTop: viewportHeight,
       complete: function () {
            //Hide your button here
       }
