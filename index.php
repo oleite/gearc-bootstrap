@@ -1,13 +1,13 @@
 <?php include 'header.php'; ?>
 
 <div class="carousel">
+   <object class="carousel-arrow-down" type="image/svg+xml" data="media/svg/arrow-down.svg"></object>
+
 
    <div class="carousel-content container">
       <h1 class="title">Rain</h1>
-      <p class="description">chuva chuva chove mas como chove</p>
+      <p class="description">Chuva chuvisco chuvarada, por que que chove tanto assim?</p>
    </div>
-   <object class="carousel-arrow-down js-open-featured" type="image/svg+xml" data="media/svg/arrow-down.svg"></object>
-
 
    <div class="carousel-fixed">
       <div class="video-overlay"></div>
@@ -16,8 +16,12 @@
       </video>
       <img class="carousel-image" src="./media/bitmap/rain1.png" alt="">
    </div>
+
+   <div class="close-featured js-close-featured">
+      <object type="image/svg+xml" data="media/svg/arrow-down.svg"></object>
+   </div>
 </div>
-<div class="card container js-close-featured"></div>
+<div class="card container"></div>
 
 
 <?php include 'footer.php'; ?>

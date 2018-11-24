@@ -1,30 +1,39 @@
 
 $('.carousel-video').on('click', function(){
-
    load_featured( $(this).data("file") );
 });
 
+$('.js-close-featured').on('click', function(){
+   console.log('Closing featured');
+   close_featured();
+});
+
+
+
 var cardActive = false;
+
+function close_featured() {
+   cardActive = false;
+
+   $('html, body').animate({
+      scrollTop: 0,
+      complete: function () {
+           //Hide your button here
+      }
+   }, 750);
+
+   setTimeout(function(){
+      $('.carousel').removeClass("active");
+   }, 100);
+   setTimeout(function(){
+      $('.card').removeClass("active");
+   }, 750);
+}
 
 function load_featured( featuredFile ) {
 
    if(cardActive) {
-      cardActive = false;
-
-      $('html, body').animate({
-         scrollTop: 0,
-         complete: function () {
-              //Hide your button here
-         }
-      }, 750);
-
-      setTimeout(function(){
-         $('.carousel').removeClass("active");
-      }, 100);
-      setTimeout(function(){
-         $('.card').removeClass("active");
-      }, 750);
-
+      close_featured()
    } else {
       cardActive = true;
 

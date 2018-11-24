@@ -12,6 +12,21 @@ body {
    color: white;
 }
 
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }
+
 @keyframes fade-in {
    0% {
       opacity: 0;
@@ -50,12 +65,6 @@ body {
    overflow-x: hidden;
 }
 
-.header {
-   position: absolute;
-   z-index: 11;
-   width: 100%;
-   top: 0;
-}
 
 .gearc-logo {
    background-color: $primary;
@@ -69,20 +78,42 @@ body {
 
 
 
-
-.navbar {
+.header {
+   position: absolute;
+   z-index: 11;
+   width: 100%;
+   top: 0;
+   left: 0;
+   right: 0;
+   margin: 0 auto;
    padding-top: 0;
+
+   .container {
+      display: flex;
+   }
+   .navbar {
+      padding-top: 0;
+   }
+
+   .navbar-brand {
+      padding: 0;
+   }
+
+   .navbar-collapse {
+      order: 3;
+      flex-grow: 0;
+
+      &.show, &.collapsing {
+         order: 0;
+         flex-grow: 1;
+         background-color: #111;
+         padding: 5px;
+      }
+   }
 }
 
-.navbar-brand {
-   padding: 0;
-}
 
-.navbar-collapse {
-   flex: 0;
-}
-
-.navbar-light .navbar-nav .nav-link {
+.navbar-dark .navbar-nav .nav-link {
    color: white;
    transition: color 100ms ease;
    &:hover {
