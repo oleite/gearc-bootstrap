@@ -1,6 +1,6 @@
 <?php
    function gearc_version(){
-      $version = "1.18";
+      $version = "1.20";
       echo "?v=" . $version;
    }
 ?>

@@ -32,7 +32,7 @@
       <div class="grid-item col-md-3">
          <div class="grid-item-content">
             <img src="media/bitmap/profile/henrique.jfif" alt="">
-            <p class="nome">Henrique Luis</p>
+            <p class="nome">Henrique Luiz</p>
          </div>
       </div>
    </div>

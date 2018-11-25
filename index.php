@@ -30,20 +30,7 @@
       </div>
       <div class="carousel-item">
          <div class="item-content">
-            <h1 class="title">Rain</h1>
-         </div>
-         <div class="item-fixed">
-            <div class="video-overlay"></div>
-            <video autoplay muted loop class="item-video" data-file="feat-rain">
-               <source src="media/video/rain.mp4" type="video/mp4">
-            </video>
-            <img class="item-image" src="./media/bitmap/rain1.png" alt="">
-         </div>
-      </div>
-      <div class="carousel-item">
-         <div class="item-content">
             <h1 class="title">Atenção - Limpeza</h1>
-            <p class="description">meu pé meu querido pé que me aguenta o dia inteiro</p>
          </div>
          <div class="item-fixed">
             <div class="video-overlay"></div>
@@ -77,6 +64,18 @@
                <source src="media/video/cibele.mp4" type="video/mp4">
             </video>
             <img class="item-image" src="./media/bitmap/cibele.jpg" alt="">
+         </div>
+      </div>
+      <div class="carousel-item">
+         <div class="item-content">
+            <h1 class="title">Rain</h1>
+         </div>
+         <div class="item-fixed">
+            <div class="video-overlay"></div>
+            <video autoplay muted loop class="item-video" data-file="feat-rain">
+               <source src="media/video/rain.mp4" type="video/mp4">
+            </video>
+            <img class="item-image" src="./media/bitmap/rain1.png" alt="">
          </div>
       </div>
    </div>
