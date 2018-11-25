@@ -69,10 +69,7 @@ function load_featured( featuredFile ) {
       $('.carousel').addClass("live");
 
       $('html').animate({
-         scrollTop: $(window).height(),
-         complete: function () {
-              //Hide your button here
-         }
+         scrollTop: $(window).height()
       }, 750);
 
    }

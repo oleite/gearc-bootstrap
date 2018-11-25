@@ -28,9 +28,6 @@
                  <a class="nav-link" href=".">Projetos</a>
                 </li>
                 <li class="nav-item">
-                 <a class="nav-link" href="#">Contato</a>
-                </li>
-                <li class="nav-item">
                  <a class="nav-link" href="sobre.php">Sobre</a>
                 </li>
              </ul>
