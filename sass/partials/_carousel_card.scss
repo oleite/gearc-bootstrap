@@ -1,12 +1,111 @@
-
 .carousel {
    height: 100vh;
-   overflow: hidden;
-   cursor: pointer;
+   //overflow: hidden;
 
-   display: flex;
-   justify-content: center;
-   align-items: center;
+   .carousel-indicators {
+      right: 75px;
+      left: auto;
+      margin: 0;
+      transform: rotate(90deg);
+      bottom: 75px;
+
+      li {
+         border-radius: 5px;
+         height: 7px;
+         width: 15px;
+      }
+   }
+
+
+   .carousel-inner {
+      height: 100%;
+
+      .carousel-item {
+         position: relative;
+         height: 100%;
+         transform: unset !important;
+         perspective: none !important;
+
+         cursor: pointer;
+
+         display: none;
+         &.active {
+            display: flex;
+         }
+
+         justify-content: center;
+         align-items: center;
+
+
+
+         .item-content {
+            z-index: 2;
+            position: relative;
+            pointer-events: none;
+            width: 100%;
+            margin: 0 15%;
+
+            .title {
+               font-size: 3em;
+            }
+            .description {
+               opacity: 0.7;
+               font-size: 1.2em;
+            }
+
+            @media (min-width: 768px) {
+               .title {
+                  font-size: 5em;
+               }
+               .description {
+                  font-size: 2em;
+               }
+            }
+         }//.item-content
+
+
+         .item-fixed {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+
+            animation-name: fade-in;
+            animation-duration: 500ms;
+
+            .item-video {
+               position: absolute;
+               min-height: 100%;
+               min-width: 100%;
+
+               transition: filter 1s ease;
+
+               filter: blur(10px);
+               &:hover {
+                  filter: blur(0px);
+               }
+            }
+            .item-image {
+               position: absolute;
+               min-height: 100%;
+               min-width: 100%;
+
+               pointer-events: none;
+               opacity: 0;
+               transition: opacity 3s ease;
+            }
+            .video-overlay {
+               position: absolute;
+               z-index: 1;
+               background-color: rgba(20, 20, 20, 0.7);
+               top: 0;
+               bottom: 0;
+               right: 0;
+               left: 0;
+               pointer-events: none;
+            }
+         }//.item-fixed
+      }//.carousel-item
+   }//.carousel-inner
 
 
    .carousel-arrow-down {
@@ -19,71 +118,79 @@
       left: 0;
       right: 0;
       pointer-events: none;
-      transition: opacity 1s ease, transform 500ms ease;
+      transition: opacity 250ms ease, transform 500ms ease;
+      opacity: 0.5;
    }
+   &:hover {
+      .carousel-arrow-down  {
+         opacity: 1;
+      }
+   }
+   &.live {
+      .carousel-arrow-down  {
+         transform: rotate(-90deg);
+      }
+      .carousel-inner .carousel-item .item-fixed .item-image {
+         opacity: 1;
+      }
+   }
+}//.carousel
 
-   .carousel-content {
-      z-index: 2;
+.carcard {
+   #carcard-wrapper {
+      display: none;
+      margin-top: 5vh;
+      padding-top: 50px;
+      min-height: 100vh;
+
       position: relative;
-      pointer-events: none;
+      background-color: #0e0e0edd;
 
-      .title {
-         font-size: 3em;
-      }
-      .description {
-         opacity: 0.7;
-         font-size: 1.2em;
-      }
-
-      @media (min-width: 768px) {
-         .title {
-            font-size: 5em;
-         }
-         .description {
-            font-size: 2em;
-         }
-      }
-   }
-
-
-   .carousel-fixed {
-      position: fixed;
-      height: 100%;
-      width: 100%;
-
-      animation-name: fade-in;
-      animation-duration: 500ms;
-
-      .carousel-video {
+      &:before {
+         content: "";
+         max-width: 500px;
+         border-top: solid 8px $primary;
+         border-radius: 2px;
          position: absolute;
-         min-height: 100%;
-         min-width: 100%;
-
-         transition: filter 1s ease;
-
-         filter: blur(10px);
-         &:hover {
-            filter: blur(0px);
-         }
-      }
-      .carousel-image {
-         position: absolute;
-         min-height: 100%;
-         min-width: 100%;
-
-         pointer-events: none;
-         opacity: 0;
-         transition: opacity 3s ease;
-      }
-      .video-overlay {
-         position: absolute;
-         z-index: 1;
-         background-color: rgba(20, 20, 20, 0.7);
-         top: 0;
-         bottom: 0;
-         right: 0;
+         top: -4px;
          left: 0;
-         pointer-events: none;
+         right: 0;
+         margin: auto;
+      }
+
+      .row {
+         padding: 20px 0;
+         margin-bottom: 100px;
+
+         opacity: 0;
+         transform: translateY(100px);
+         animation-name: slide-sm-up, fade-in;
+         animation-duration: 1s;
+         animation-delay: 250ms;
+         animation-fill-mode: forwards;
+
+         @media (min-width: 576px) {
+            padding: 20px 20px;
+         }
+         @media (min-width: 768px) {
+            padding: 20px 50px;
+         }
+         @media (min-width: 992px) {
+            padding: 20px 70px;
+         }
+
+         .carcard-feat {
+            padding: 0 100px;
+            margin-bottom: 50px;
+         }
+
+         .left {
+
+         }
+
+         .right {
+            background-color: #111;
+         }
       }
    }
 
@@ -98,6 +205,7 @@
       height: 60px;
       width: 60px;
       border-radius: 50% 50% 10% 10%;
+      cursor: pointer;
 
       object {
          height: 100%;
@@ -107,83 +215,12 @@
       }
    }
 
-   &:hover {
-      .carousel-arrow-down {
-         opacity: 0.5;
-      }
-   }
-   &.active {
-      .carousel-arrow-down {
-         transform: rotate(-90deg);
-      }
-      .carousel-image {
-         opacity: 1;
+   &.live {
+      #carcard-wrapper {
+         display: block;
       }
       .close-featured {
          bottom: 5px;
       }
    }
-}
-
-.card {
-   display: none;
-   margin-top: 5vh;
-   padding-top: 50px;
-   min-height: 100vh;
-   overflow: visible;
-
-   position: relative;
-   background-color: #0e0e0edd;
-
-   &:before {
-      content: "";
-      max-width: 500px;
-      border-top: solid 8px $primary;
-      border-radius: 2px;
-      position: absolute;
-      top: -4px;
-      left: 0;
-      right: 0;
-      margin: auto;
-   }
-
-   &.active {
-      display: block;
-   }
-
-
-   .row {
-      padding: 20px 0;
-      margin-bottom: 100px;
-
-      opacity: 0;
-      transform: translateY(100px);
-      animation-name: slide-sm-up, fade-in;
-      animation-duration: 1s;
-      animation-delay: 250ms;
-      animation-fill-mode: forwards;
-
-      @media (min-width: 576px) {
-         padding: 20px 20px;
-      }
-      @media (min-width: 768px) {
-         padding: 20px 50px;
-      }
-      @media (min-width: 992px) {
-         padding: 20px 70px;
-      }
-
-      .card-feat {
-         padding: 0 100px;
-         margin-bottom: 50px;
-      }
-
-      .left {
-
-      }
-
-      .right {
-         background-color: #111;
-      }
-   }
-}
+}//.carcard

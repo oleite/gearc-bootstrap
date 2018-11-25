@@ -1,21 +1,30 @@
+$('.item-video').click(function(event){
+   event.stopPropagation();
 
-$('.carousel-video').on('click', function(){
+   console.log('Loading featured');
    load_featured( $(this).data("file") );
 });
 
-$('.js-close-featured').on('click', function(){
+
+$('.js-close-featured').click(function(event){
+   event.stopPropagation();
+
    console.log('Closing featured');
    close_featured();
 });
 
 
+$('#carousel').on('slide.bs.carousel', function () {
+  close_featured();
+})
 
-var cardActive = false;
+
+var carcardLive = false;
 
 function close_featured() {
-   cardActive = false;
+   carcardLive = false;
 
-   $('html, body').animate({
+   $('html').animate({
       scrollTop: 0,
       complete: function () {
            //Hide your button here
@@ -23,35 +32,35 @@ function close_featured() {
    }, 750);
 
    setTimeout(function(){
-      $('.carousel').removeClass("active");
+      $('.carousel').removeClass("live");
    }, 100);
    setTimeout(function(){
-      $('.card').removeClass("active");
+      $('.carcard').removeClass("live");
    }, 750);
 }
 
 function load_featured( featuredFile ) {
 
-   if(cardActive) {
+   if(carcardLive) {
       close_featured()
+      $('#carousel').carousel('cycle');
    } else {
-      cardActive = true;
+      carcardLive = true;
+      $('#carousel').carousel('pause');
 
       var result = "posts/" + featuredFile + ".html" + "?nocache=" + Math.random();
       console.log("Loaded " + result);
-      $('.card').load( result );
+      $('#carcard-wrapper').load( result );
 
-      //$('.featured').hide().load(result).toggle('500ms');
+      $('.carcard').addClass("live");
+      $('.carousel').addClass("live");
 
-      $('.card').addClass("active");
-      $('.carousel').addClass("active");
-
-
-      $('html, body').animate({
+      $('html').animate({
          scrollTop: $(window).height(),
          complete: function () {
               //Hide your button here
          }
       }, 750);
+
    }
 }

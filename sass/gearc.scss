@@ -5,6 +5,7 @@ $primary: #CC2C00;
 body, html {
    padding: 0;
    margin: 0;
+   //overflow: hidden;
 }
 
 body {
@@ -66,12 +67,7 @@ body {
 }
 
 
-.gearc-logo {
-   background-color: $primary;
-   height: 150px;
-   padding: 10px;
-   pointer-events: none;
-}
+
 
 
 
@@ -97,6 +93,14 @@ body {
 
    .navbar-brand {
       padding: 0;
+      background-color: $primary;
+      height: 150px;
+      width: 105px;
+      padding: 10px;
+
+      .gearc-logo {
+         pointer-events: none;
+      }
    }
 
    .navbar-collapse {
