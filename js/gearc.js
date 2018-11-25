@@ -1,3 +1,14 @@
+$(document).ready(function() {
+	// get current URL path and assign 'active' class
+   var url = window.location.pathname;
+	var pathname = url.substr(url.lastIndexOf('/') + 1);
+	$('.nav-item > a[href="'+pathname+'"]').parent().addClass('active');
+   if (pathname == "") {
+      $('.nav-item > a[href="."]').parent().addClass('active');
+   }
+});
+
+
 $('.item-video').click(function(event){
    event.stopPropagation();
 
@@ -16,8 +27,10 @@ $('.js-close-featured').click(function(event){
 
 $('#carousel').on('slide.bs.carousel', function () {
   close_featured();
-})
-
+});
+$('#carousel').carousel({
+  interval: 10000
+});
 
 var carcardLive = false;
 

@@ -6,11 +6,24 @@
    <ol class="carousel-indicators">
      <li data-target="#carousel" data-slide-to="0" class="active"></li>
      <li data-target="#carousel" data-slide-to="1"></li>
+     <li data-target="#carousel" data-slide-to="2"></li>
    </ol>
 
    <div class="carousel-inner">
       <div class="carousel-item active">
-
+         <div class="item-content">
+            <h1 class="title">クロエ</h1>
+            <p class="description">Onde quer que você esteja</p>
+         </div>
+         <div class="item-fixed">
+            <div class="video-overlay"></div>
+            <video autoplay muted loop id="video-limpeza" class="item-video" data-file="feat-chloe">
+               <source src="media/video/chloe.mp4" type="video/mp4">
+            </video>
+            <img class="item-image" src="./media/bitmap/chloe.png" alt="">
+         </div>
+      </div>
+      <div class="carousel-item">
          <div class="item-content">
             <h1 class="title">Rain</h1>
             <p class="description">Chuva chuvisco chuvarada, por que que chove tanto assim?</p>
@@ -22,10 +35,8 @@
             </video>
             <img class="item-image" src="./media/bitmap/rain1.png" alt="">
          </div>
-
       </div>
       <div class="carousel-item">
-
          <div class="item-content">
             <h1 class="title">Atenção - Limpeza</h1>
             <p class="description">meu pé meu querido pé que me aguenta o dia inteiro</p>
@@ -37,9 +48,7 @@
             </video>
             <img class="item-image" src="./media/bitmap/featured-sobre.jpg" alt="">
          </div>
-
       </div>
-
    </div>
 
    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
