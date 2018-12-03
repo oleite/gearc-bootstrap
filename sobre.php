@@ -88,6 +88,18 @@
             <p class="nome">Pedro Pratta</p>
          </div>
       </div>
+      <div class="grid-item col-md-3">
+         <div class="grid-item-content">
+            <img src="media/bitmap/profile/luismoura.jpg" alt="">
+            <p class="nome">Luis Ricardo</p>
+         </div>
+      </div>
+      <div class="grid-item col-md-3">
+         <div class="grid-item-content">
+            <img src="media/bitmap/profile/felipe.jfif" alt="">
+            <p class="nome">Felipe Pinheiros</p>
+         </div>
+      </div>
    </div>
 
    <h2>Patrocínio: Rede MindStone - Medicina Neurológica</h2>
@@ -97,7 +109,7 @@
 
    <center>
       <object class="gwd-banner" data="media/bannerMindStone/index.html" width="728px" height="90px"></object>
-      
+
       <img src="media/bitmap/mindstone.png" alt="Mapa Rede MindStone" style="width: 80%">
    </center>
 
